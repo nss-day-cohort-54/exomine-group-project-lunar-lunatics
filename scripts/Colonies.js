@@ -1,6 +1,6 @@
-import { } from "./database.js"
+import { getColonies, setColonies } from "./database.js"
 
-const colony = getColony()  //Change as needed
+const colonies = getColonies()  //Change as needed
 
 //Create event listener.
 //event called "change"

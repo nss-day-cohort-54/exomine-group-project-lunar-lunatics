@@ -60,12 +60,18 @@ export const setColonies = (id) => {
         database.transientState.colonyId = id
 }
 
+export const setGovernors = (id)  => {
+        database.transientState.governorId = id
+}
+
 
 // Preexisting boilerplate code.  Needs further explanation.
+/*
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
+*/
 
 export const getMinerals = () => {
         return database.minerals.map(mineral => ({...mineral}))
@@ -83,6 +89,10 @@ export const getGovernors = () => {
         return database.governors.map(governor => ({...governor}))
 }
 
+export const getColonyMinerals = () => {
+        return database.colonyMinerals.map(colonyMineral => ({...colonyMineral}))
+}
+
 
 // Create Event to Dispatch: "transientState"
         // Copy the current state of user choices
@@ -94,10 +104,25 @@ export const getGovernors = () => {
                 // Uses data from transient state array "database.Orders"
         // Broadcast a notification that permanent state has changed 
                 //"document.dispatchEvent(new CustomEvent("stateChanged"))"
+
 export const purchaseMineral = () => {
+        // Copy the current state of user choices.
+        const newPurchase = {...database.transientState}
+
+        // Add new primary key to the selected objects.
+        //const lastIndex = database.transientState.???????
+        //newPurchase.id = database.colonyMinerals[lastIndex].id????
+
+        // Add the new purchase object to transient state.
+        database.transientState.push(newPurchase)
+
+        //Reset transient state for purchase choices
+        database.transientState = {}
+
 
         // Broadcast custom event to entire document so that the
         // application can re-render and update state
         document.dispatchEvent( new CustomEvent("stateChanged") )
-    }
 }
+
+
