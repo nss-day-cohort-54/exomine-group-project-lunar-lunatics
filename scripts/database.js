@@ -48,30 +48,30 @@ const database = {
 
 }
 
-export const setMinerals = (id) => {
-        database.transientState.mineralId = id
-}
-
-export const setFacility = (id) => {
-        database.transientState.facilityId = id
-}
-
-export const setColonies = (id) => {
-        database.transientState.colonyId = id
-}
-
-export const setGovernors = (id)  => {
-        database.transientState.governorId = id
-}
 
 
 // Preexisting boilerplate code.  Needs further explanation.
-/*
-export const setFacility = (facilityId) => {
-    database.transientState.selectedFacility = facilityId
-    document.dispatchEvent( new CustomEvent("stateChanged") )
+
+export const setMinerals = (mineralId) => {
+        database.transientState.selectedMineral = mineralId
+        document.dispatchEvent( new CustomEvent("stateChanged") )
 }
-*/
+
+export const setColonies = (colonyId) => {
+        database.transientState.selectedColony = colonyId
+        document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
+export const setFacility = (facilityId) => {
+        database.transientState.selectedFacility = facilityId
+        document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
+export const setGovernors = (governorId) => {
+        database.transientState.selectedGovernor = governorId
+        document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
 
 export const getMinerals = () => {
         return database.minerals.map(mineral => ({...mineral}))
