@@ -1,4 +1,4 @@
-import { getOrders, getMinerals, getGovernors } from "./database.js"
+//import { getColonyMinerals, getMinerals } from "./database.js"
 /*
 document.addEventListener(
     "change",
@@ -9,42 +9,40 @@ document.addEventListener(
     }
 )
 */
+/*
 
-const orders = getOrders()
-
-const buildOrderListItem = (order) => {
+const buildOrderListItem = (purchase) => {
     
     
-        const sizes = getMinerals()
+        const minerals = getMinerals()
         
         // Remember that the function you pass to find() must return true/false
         // Repeat the below .find function as needed for ordered items and relevant govs/colonies.
         const foundMinerals = minerals.find(
             (mineral) => {
                 for (const mineral of minerals) 
-                if(mineral.id === order.mineralId)
-                return mineral.xxxxxxxxxxxxx? // maybe mineral.quantity
+                if(mineral.id === purchase.mineralId)
+                return mineral.xxxxxxxxxxxxx // maybe mineral.quantity
             }
         )
         
         
-        const totalAmount = // However we will calculate quantity outputs
+        const totalAmount = ({}) // However we will calculate quantity outputs
         
         
-        const quantityString = totalAmount.toLocaleString({ /* Whatever we use to calculate quantities. */ })
+        const quantityString = totalAmount.toLocaleString({})
         
         //Undecided on the below listing representation of returned orders results.
         return `<li>
-            Order ${} 
+            Order ${order} 
         </li>`
 }
 
 
 
-// Mayeb keep the below as is?, Its most likely good to go.
 export const Orders = () => {
-   
-    const orders = getOrders()
+
+    const orders = getColonyMinerals()
 
     let html = "<ul>"
 
@@ -55,3 +53,4 @@ export const Orders = () => {
 
     return html
 }
+*/

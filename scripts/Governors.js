@@ -1,6 +1,6 @@
-import { } from "./database.js"
+import { getGovernors, setGovernors } from "./database.js"
 
-const govs = getgovs()  // Change as needed
+const governors = getGovernors()  // Change as needed
 
 // Create event listener.
 // event called "change"
@@ -8,8 +8,8 @@ const govs = getgovs()  // Change as needed
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "") {
-            setGovs(parseInt(event.target.value))  //Change as needed
+        if (event.target.name === "governor") {
+            setGovernors(parseInt(event.target.value))  //Change as needed
         }
     }
 )
@@ -17,13 +17,13 @@ document.addEventListener(
 
 // Needs Drop Down button
 // Change as needed
-export const Govs = () => {
+export const Governors = () => {
     let html = "<ul>"
 
     // This is how you have been converting objects to <li> elements
-    for (const gov of govs) {
+    for (const governor of governors) {
         html += `<li>
-            <input type="drop-down?" name="" value="${gov.id}" /> ${gov.gov}
+            <input type="drop-down?" name="" value="${governor.id}" /> ${governor.governor}
         </li>`
     }
 

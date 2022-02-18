@@ -1,4 +1,4 @@
-import { getFacilities } from "./database.js"
+import { getFacilities, setFacility } from "./database.js"
 
 const facilities = getFacilities()  // Change as needed
 
@@ -8,8 +8,8 @@ const facilities = getFacilities()  // Change as needed
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "") {
-            setFacilities(parseInt(event.target.value))  //Change as needed
+        if (event.target.name === "facility") {
+            setFacility(parseInt(event.target.value))  //Change as needed
         }
     }
 )
@@ -19,10 +19,9 @@ document.addEventListener(
 export const Facilities = () => {
     let html = "<ul>"
 
-    // This is how you have been converting objects to <li> elements
     for (const facility of facilities) {
         html += `<li>
-            <input type="drop-down?" name="" value="${fac.id}" /> ${fac.fac}
+            <input type="drop-down?" name="" value="${facility.id}" /> ${facility.facility}
         </li>`
     }
 
