@@ -1,12 +1,13 @@
 // Will contain body html.
 // Import functions from modules.
 /*
-import { Facilities } from "./Facilities.js"
+
 import { Governors } from "./Governors.js"
 import {Minerals} from "./Minerals.js"
 import {Colonies} from "./Colonies.js"
 import { Orders } from "./Orders.js"
 */
+import { Facilities } from "./Facilities.js"
 import {purchaseMineral} from "./database.js"
 
 
@@ -32,7 +33,7 @@ export const ExoMine = () => {
             </section>
             <section class="choices__facility options">
                 <h2>Facility</h2>
-                "Facilities()"
+                ${Facilities()}
             </section>
             <section class="choices__minerals options">
                 <h2>Minerals</h2>
