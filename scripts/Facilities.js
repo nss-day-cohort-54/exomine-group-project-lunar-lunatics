@@ -26,21 +26,3 @@ export const Facilities = () => {
     return html
 }
 
-
-
-
-  /*
-    let html = "<section>"
-
-    for (const facility of facilities) {
-        html += `<div class="dropdown">
-                    <button class="dropbtn">Choose a facility</button>
-                    <div class="dropdown-content">
-                        <a>${facility.name}</a>
-                    </div>
-                </div>`
-    }
-
-    html += "</section>"
-    return html
-    */

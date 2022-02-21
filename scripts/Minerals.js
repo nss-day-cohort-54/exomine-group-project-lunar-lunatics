@@ -3,6 +3,7 @@ import { getMinerals, setMinerals } from "./database.js"
 const minerals = getMinerals()  //Change as needed
 
 //Create event listener.
+//event called "change"
 //if change event takes place in governors menu, generate window alert show the choice.
 document.addEventListener(
     "change",
