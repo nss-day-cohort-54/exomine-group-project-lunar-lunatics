@@ -23,7 +23,7 @@ export const Facilities = () => {
         html += `<div class="dropdown">
                     <button class="dropbtn">Choose a facility</button>
                         <div class="dropdown-content">
-                            <a value="${facility.id}>${facility.name}</a>
+                            <a href="#">${facility.name}</a>
                     </div>
                 </div>`
     }
