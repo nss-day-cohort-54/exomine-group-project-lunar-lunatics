@@ -22,7 +22,7 @@ document.addEventListener("stateChanged",
     renderAllHTML()
 })
 
-
+/*
 const mineral = Minerals()
 document.addEventListener("stateChanged", 
 (event) => {
@@ -39,3 +39,5 @@ document.addEventListener("stateChanged",
     return html
         
 })
+*/
+

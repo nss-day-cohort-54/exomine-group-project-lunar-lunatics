@@ -1,6 +1,7 @@
-import { getColonies, setColonies } from "./database.js"
+import { getColonies, setColonies, getSelectedGovernor, getGovernors } from "./database.js"
+import { Governors } from "./Governors.js"
 
-const colonies = getColonies()  //Change as needed
+  //Change as needed
 
 //Create event listener.
 //event called "change"
@@ -8,7 +9,7 @@ const colonies = getColonies()  //Change as needed
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "") {
+        if (event.target.name === "governor") {
             setColonies(parseInt(event.target.value))  //Change as needed
         }
     }
@@ -16,14 +17,32 @@ document.addEventListener(
 
 // Everything below likely needs to be changed
 export const Colony = () => {
+    const colonies = getColonies()
+    let selectedGovernorId = getSelectedGovernor()
+    let governors = getGovernors()
+
+    if (selectedGovernorId === undefined) {
+        return "Select a governor"
+    }
+
+    let foundGovernor = governors.find(governor => {
+        return governor.id === selectedGovernorId
+    })
+
+    let governorColony = foundGovernor.colonyId
+
+    let foundColony = colonies.find(colony => {
+        return colony.id === governorColony
+    })
+
     let html = "<ul>"
 
     // This is how you have been converting objects to <li> elements
-    for (const colony of colonies) {
+    
         html += `<li>
-            <input value="${colony.id}" /> ${colony.colony}
+            < value="${foundColony.id}" /> ${foundColony.name}
         </li>`
-    }
+    
 
     html += "</ul>"
     return html

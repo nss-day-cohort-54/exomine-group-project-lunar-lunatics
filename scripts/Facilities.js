@@ -1,15 +1,17 @@
-import { getFacilities, setFacility } from "./database.js"
+import { getFacilities, setFacility, getFacilityMinerals } from "./database.js"
 
 const facilities = getFacilities()  // Change as needed
 
 // Create event listener.
 // event called "change"
 // if change event takes place in governors menu, generate window alert show the choice.
+
+//Event listener needs to corelate facility data with facilityMinerals data.
 document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "facility") {
-            setFacility(parseInt(event.target.value))  //Change as needed
+            setFacility(parseInt(event.target.value))  
         }
     }
 )
