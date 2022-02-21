@@ -29,12 +29,12 @@ const database = {
         colonies: [
                 {id: 1, name: "Arrakis"},
                 {id: 2, name: "Caladan"},
-                {id: 3, name: "Chusuk"},
+                {id: 3, name: "Giedi Prime"}
         ],
         governors: [
-                {id: 1, name: "Leto Atreides"},
-                {id: 2, name: "Barron Harkonnen"},
-                {id: 3, name: "Glossu Beast Rabban"}
+                {id: 1, name: "Leto Atreides", colonyId: 1},
+                {id: 2, name: "Barron Harkonnen", colonyId: 3},
+                {id: 3, name: "Glossu Beast Rabban", colonyId: 2}
         ],
         facilityMinerals: [
                 {id: 1, mineralId: 1, facilityId: 2, quantity: 16},
@@ -72,7 +72,6 @@ export const setGovernors = (governorId) => {
         document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
-
 export const getMinerals = () => {
         return database.minerals.map(mineral => ({...mineral}))
 }
@@ -87,6 +86,14 @@ export const getColonies = () => {
 
 export const getGovernors = () => {
         return database.governors.map(governor => ({...governor}))
+}
+
+export const getSelectedGovernor = () => {
+        return database.transientState.selectedGovernor
+}
+
+export const getFacilityMinerals = () => {
+        return database.facilityMinerals.map(facilityMineral => ({...facilityMineral}))
 }
 
 export const getColonyMinerals = () => {
