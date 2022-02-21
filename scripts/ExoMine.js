@@ -9,8 +9,8 @@ import { Orders } from "./Orders.js"
 */
 import { Facilities } from "./Facilities.js"
 import {purchaseMineral} from "./database.js"
-
-
+import {Minerals} from "./Minerals.js"
+import { Governors } from "./Governors.js"
 
 
 document.addEventListener(
@@ -29,7 +29,7 @@ export const ExoMine = () => {
         <article class="choices">
             <section class="choices__governors options">
                 <h2>Governors</h2>
-                "Governors()"
+                ${Governors()}
             </section>
             <section class="facility_container options">
                 <h2>Facility</h2>

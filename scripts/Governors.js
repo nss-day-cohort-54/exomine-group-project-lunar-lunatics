@@ -18,15 +18,11 @@ document.addEventListener(
 // Needs Drop Down button
 // Change as needed
 export const Governors = () => {
-    let html = "<ul>"
-
-    // This is how you have been converting objects to <li> elements
+    let html = "<select>"
+    html += `<option value= "0" >Choose A Governor</option>`
     for (const governor of governors) {
-        html += `<li>
-            <input type="drop-down?" name="" value="${governor.id}" /> ${governor.governor}
-        </li>`
+        html += `<option value="${governor.id}">${governor.name}</option>`
     }
-
-    html += "</ul>"
+    html += "</select>"
     return html
 }
