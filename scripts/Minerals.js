@@ -19,9 +19,9 @@ export const Minerals = () => {
     let html = "<ul>"
 
     // This is how you have been converting objects to <li> elements
-    for (const min of mins) {
+    for (const mineral of minerals) {
         html += `<li>
-            <input type="radio" name="" value="${min.id}" /> ${min.min}
+            <input type="radio" name="" value="${mineral.id}" /> ${mineral.name}
         </li>`
     }
 
