@@ -31,13 +31,13 @@ export const ExoMine = () => {
                 <h2>Governors</h2>
                 "Governors()"
             </section>
-            <section class="choices__facility options">
+            <section class="facility_container options">
                 <h2>Facility</h2>
                 ${Facilities()}
             </section>
             <section class="choices__minerals options">
                 <h2>Minerals</h2>
-                "Minerals()"
+                ${Minerals()}
             </section>
             <section class="choices__colony options">
                 <h2>Colonies</h2>
