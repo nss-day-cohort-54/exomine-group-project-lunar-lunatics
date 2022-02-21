@@ -17,17 +17,30 @@ document.addEventListener(
 // Needs Drop down button code.
 // Change as needed
 export const Facilities = () => {
+    let html = "<select>"
+    html += `<option value= "0" >Choose A Facility</option>`
+    for (const facility of facilities) {
+        html += `<option value="${facility.id}">${facility.name}</option>`
+    }
+    html += "</select>"
+    return html
+}
+
+
+
+
+  /*
     let html = "<section>"
 
     for (const facility of facilities) {
         html += `<div class="dropdown">
                     <button class="dropbtn">Choose a facility</button>
-                        <div class="dropdown-content">
-                            <a href="#">${facility.name}</a>
+                    <div class="dropdown-content">
+                        <a>${facility.name}</a>
                     </div>
                 </div>`
     }
 
     html += "</section>"
     return html
-}
+    */
